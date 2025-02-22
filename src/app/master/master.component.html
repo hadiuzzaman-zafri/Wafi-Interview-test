@@ -1,0 +1,20 @@
+<div class="container m-3">
+    <div class="row">
+        <div class="col-md-3 col- d-flex flex-column align-items-start align-items-md-center gap-2">
+          <button type="button" class="btn  text-start w-100" (click)="changeTab('calender')" [ngClass]="currComponent=='calender' ? 'btn-primary':''"><i class="bi bi-calendar3 pe-2"></i>Calendar</button>
+          <button type="button" class="btn  text-start w-100" (click)="changeTab('booking')" [ngClass]="currComponent=='booking' ? 'btn-primary':''"><i class="bi bi-calendar-event pe-2"></i>Add Booking</button>
+          <button type="button" class="btn  text-start w-100" (click)="changeTab('workflows')" [ngClass]="currComponent=='workflows' ? 'btn-primary':''"><i class="bi bi-alarm pe-2"></i>Workflows</button>
+        </div>
+    
+        <div class="col-md-9" *ngIf="currComponent == 'calender'">
+            <app-calender></app-calender>
+        </div>
+        <div class="col-md-9" *ngIf="currComponent == 'booking'">
+            <app-booking></app-booking>
+        </div>
+        <div class="col-md-9" *ngIf="currComponent == 'workflows'">
+            <app-workflow></app-workflow>
+        </div>
+      </div>
+    
+</div>
